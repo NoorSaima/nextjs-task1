@@ -1,66 +1,58 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import React from 'react';
+import Link from 'next/link';
+import styles from './home.module.css';
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className={styles.landingPage}>
+      {/* Hero Section */}
+      <section className={styles.heroSection}>
+        <div className={styles.heroContent}>
+          <h1 className={styles.heroTitle}>AI-Driven Tools for Modern Teams</h1>
+          <p className={styles.heroDescription}>
+            Build amazing products with our platform. Simple, elegant, and powerful tools designed for the future.
           </p>
+          <div className={styles.ctaButtons}>
+            <Link href="/login" className={styles.primaryButton}>Start Building</Link>
+            <Link href="/about" className={styles.secondaryButton}>Learn More</Link>
+          </div>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Features Section */}
+      <section className={styles.featuresSection}>
+        <h2 className={styles.sectionTitle}>Built for Modern Product Teams</h2>
+        <p className={styles.sectionSubtitle}>Everything you need to build and scale your products</p>
+        
+        <div className={styles.featuresGrid}>
+          <div className={styles.featureCard}>
+            <h3>Project Milestones</h3>
+            <p>Track progress across custom flows for your team. Find the right balance for users and security.</p>
+          </div>
+          
+          <div className={styles.featureCard}>
+            <h3>Team Views</h3>
+            <p>Collaborate seamlessly with your team. Real-time updates and instant notifications.</p>
+          </div>
+          
+          <div className={styles.featureCard}>
+            <h3>Advanced Search</h3>
+            <p>Find anything instantly with our powerful search engine. Filter and sort with ease.</p>
+          </div>
+          
+          <div className={styles.featureCard}>
+            <h3>Flexible Workflows</h3>
+            <p>Customize workflows to match your team's unique processes and requirements.</p>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* CTA Section */}
+      <section className={styles.ctaSection}>
+        <h2 className={styles.ctaTitle}>Ready to Get Started?</h2>
+        <p className={styles.ctaDescription}>Join thousands of teams already building with our platform</p>
+        <Link href="/login" className={styles.primaryButton}>Get Started Now</Link>
+      </section>
     </div>
   );
 }
